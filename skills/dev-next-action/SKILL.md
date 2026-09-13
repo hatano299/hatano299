@@ -9,10 +9,15 @@ description: GitHub Issue を解決するTDDサイクルの中で「次のステ
 
 以下を確認する。
 
-- `~/dev/apps/hatano299/docs/dev-strategy.md`
-- `~/dev/apps/hatano299/docs/dev-reference.md`
-- `~/dev/scripts/fin-issue/count`
-  - count が `10` の場合、Issueの全工程を開発者が担当する。AIは実行をせず相談・レビューに徹する。
+```sh
+# ~/.claude/skills/dev-next-action は hatano299 リポジトリへの symlink
+repo_root="$(dirname "$(dirname "$(readlink -f ~/.claude/skills/dev-next-action)")")"
+```
+
+- `$repo_root/docs/dev-strategy.md`
+- `$repo_root/docs/dev-reference.md`
+- `$repo_root/scripts/fin-issue/count`
+   - count が `10` の場合、Issueの全工程を開発者が担当する。AIは実行をせず相談・レビューに徹する。
 
 ## 1. ステップの判断
 
